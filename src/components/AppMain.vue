@@ -1,5 +1,6 @@
 <script>
 import store from '../store.js'
+import AppComponents from './AppComponents.vue'
 export default {
     data() {
         return {
@@ -13,6 +14,7 @@ export default {
 <template>
     <div class="background">
         <div class="container">
+            <AppComponents />
 
         </div>
     </div>
