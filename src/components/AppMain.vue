@@ -25,7 +25,7 @@ export default {
 .background {
     width: 100%;
     height: 100vh;
-    background-color: rgb(189, 0, 0);
+    background-color: rgb(141, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,15 +34,18 @@ export default {
     .container {
         width: 70%;
         height: 60%;
-        background-color: rgb(219, 216, 216);
+        background-color: rgb(192, 192, 192);
         overflow: scroll;
         border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .circle-container {
         width: 70%;
         height: 110px;
-        padding: 10px;
+        padding: 15px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -53,9 +56,8 @@ export default {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 4px solid lightgrey;
-            background-color: blue;
-            background-image: linear-gradient();
+            border: 5px solid lightgrey;
+            background-image: linear-gradient(to top left, blue, white, );
             align-self: flex-end;
         }
 
@@ -63,27 +65,24 @@ export default {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: 4px solid lightgrey;
-            background-color: rgb(255, 0, 0);
-            background-image: linear-gradient();
+            border: 5px solid lightgrey;
+            background-image: linear-gradient(to top left, rgb(255, 0, 0), white, );
         }
 
         .yellow-circle {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: 4px solid lightgrey;
-            background-color: rgb(219, 252, 0);
-            background-image: linear-gradient();
+            border: 5px solid lightgrey;
+            background-image: linear-gradient(to top left, rgb(246, 255, 0), white, );
         }
 
         .green-circle {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: 4px solid lightgrey;
-            background-color: rgb(0, 255, 42);
-            background-image: linear-gradient();
+            border: 5px solid lightgrey;
+            background-image: linear-gradient(to top left, rgb(12, 122, 17), white, );
         }
     }
 

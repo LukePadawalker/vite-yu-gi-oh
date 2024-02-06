@@ -11,9 +11,19 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div id="root">
         <AppPokemonCard v-for="pokemon in pokemons" />
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#root {
+    width: 95%;
+    height: 83%;
+    background-color: rgb(73, 72, 72);
+    border: 10px solid transparent;
+    display: flex;
+    gap: 5px;
+
+}
+</style>
