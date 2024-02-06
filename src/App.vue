@@ -7,12 +7,21 @@ export default {
 
   name: 'Pokemonlist',
   components: { AppMain },
+  methods: {
+    async fetchPokemon() {
+      await axios.get(endpoint).then(res => {
+        const pokemons = res.data.pokemons;
+        console.log(pokemons)
+        store.pokemons = pokemons.map(pokemon => {
+          const { name, number, type1, imageUrl } = pokemon;
+          return { name, number, mainType: type1, imageUrl }
+        })
+      })
+    }
+  },
   created() {
-    axios.get(endpoint).then(res => {
-      store.pokemons = res.data;
-      console.log(store.pokemons)
-    })
-  }
+    this.fetchPokemon();
+  },
 }
 </script>
 

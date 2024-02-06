@@ -4,7 +4,6 @@ import AppPokemonCard from './AppPokemonCard.vue'
 export default {
     components: { AppPokemonCard },
     name: 'AppComponents',
-    pokemons: store.pokemons,
     data: () => ({ store })
 
 }
@@ -12,7 +11,7 @@ export default {
 
 <template>
     <div id="root">
-        <AppPokemonCard v-for="pokemon in pokemons" />
+        <AppPokemonCard v-for="pokemon in store.pokemons" v-bind="pokemon" />
     </div>
 </template>
 
@@ -23,7 +22,10 @@ export default {
     background-color: rgb(73, 72, 72);
     border: 10px solid transparent;
     display: flex;
-    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
 
 }
 </style>

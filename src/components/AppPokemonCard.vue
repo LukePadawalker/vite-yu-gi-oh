@@ -1,11 +1,15 @@
 <script>
+import { stringifyStyle } from '@vue/shared';
 import { store } from '/src/store.js';
 export default {
-    img: store.imageUrl,
-    number: store.number,
-    name: store.name,
-    type: store.type1,
-
+    name: 'AppPokemonCard',
+    data: () => ({ store }),
+    props: {
+        number: String,
+        name: String,
+        type1: String,
+        img: String,
+    }
 
 }
 </script>
@@ -13,22 +17,19 @@ export default {
 <template>
     <div class="card">
         <img :src="img" alt="">
-        <div class="number">
-            <p>{{ number }}</p>
-        </div>
-        <div class="name">
-            <p>{{ name }}</p>
-        </div>
+        <p>{{ number }}</p>
+        <p>{{ name }}</p>
+        <p>{{ type }}</p>
         <div class="element">
-            <p>{{ type }}</p>
         </div>
     </div>
 </template>
 
 <style scoped>
 .card {
-    width: calc(100% / 5);
-    height: calc(100% / 2);
+    width: calc(100% / 5 - 10px);
+    height: calc(100% / 2 - 10px);
     background-color: aquamarine;
+    border-radius: 20px;
 }
 </style>
