@@ -1,12 +1,6 @@
 <script>
-import store from '../store.js'
 import AppComponents from './AppComponents.vue'
 export default {
-    data() {
-        return {
-            store,
-        }
-    }
 
 }
 </script>
