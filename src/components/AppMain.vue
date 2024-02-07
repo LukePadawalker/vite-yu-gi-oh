@@ -20,7 +20,7 @@ export default {
             <div class="green-circle"></div>
         </div>
 
-        <TypeSelect class="type-select" @option-change="$emit('read-value', currentOption)" :options="store.types"
+        <TypeSelect class="type-select" @option-change="$emit('read-value', $event)" :options="store.types"
             default-label="tutti i tipi" />
         <div class="container">
             <PokemonContainer />

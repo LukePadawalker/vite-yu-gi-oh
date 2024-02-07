@@ -5,7 +5,6 @@ import AppMain from './components/AppMain.vue';
 import { apiUri } from '/src/data/';
 import { colorMap } from '/src/data/';
 
-const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?eq[type1]=Electric&sort[number]=desc';
 export default {
 
   name: 'Pokemonlist',
@@ -14,6 +13,8 @@ export default {
     async fetchPokemon(endpoint = apiUri) {
       axios.get(endpoint).then(res => {
         store.pokemons = res.data.docs;
+        console.log(store.pokemons)
+
       })
     },
     async fetchTypes(endpoint = colorMap) {
@@ -22,17 +23,22 @@ export default {
       })
     },
 
-  },
-  created() {
-    this.fetchPokemon();
-    this.fetchTypes();
+    filteredPokemon(type) {
+      const endpoint = type ? `${apiUri}?eq[type1]=${type}` : apiUri;
+      this.fetchPokemon(endpoint)
+
+    },
+    created() {
+      this.fetchPokemon();
+      this.fetchTypes();
+    }
   }
 }
 </script>
 
 <template>
   <div>
-    <AppMain @read-value="" />
+    <AppMain @read-value="filteredPokemon" />
   </div>
 </template>
 
