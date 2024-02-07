@@ -1,7 +1,7 @@
 <script>
-import AppComponents from './AppComponents.vue'
+import PokemonContainer from './PokemonContainer.vue'
 export default {
-    components: { AppComponents }
+    components: { PokemonContainer }
 
 }
 </script>
@@ -16,7 +16,7 @@ export default {
         </div>
 
         <div class="container">
-            <AppComponents />
+            <PokemonContainer />
         </div>
     </div>
 </template>
