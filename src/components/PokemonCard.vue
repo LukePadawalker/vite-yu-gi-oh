@@ -5,7 +5,7 @@ export default {
     name: 'PokemonCard',
     data: () => ({ store }),
     props: {
-        number: String,
+        number: Number,
         name: String,
         type1: String,
         image: String,

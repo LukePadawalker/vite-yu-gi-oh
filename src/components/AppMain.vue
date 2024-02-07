@@ -1,7 +1,12 @@
 <script>
 import PokemonContainer from './PokemonContainer.vue'
+import TypeSelect from './TypeSelect.vue'
+import { store } from '/src/data/store.js'
+
 export default {
-    components: { PokemonContainer }
+    components: { PokemonContainer, TypeSelect },
+    data: () => ({ store }),
+    emits: ["read-value"]
 
 }
 </script>
@@ -15,6 +20,8 @@ export default {
             <div class="green-circle"></div>
         </div>
 
+        <TypeSelect class="type-select" @option-change="$emit('read-value', currentOption)" :options="store.types"
+            default-label="tutti i tipi" />
         <div class="container">
             <PokemonContainer />
         </div>
@@ -58,7 +65,7 @@ export default {
             border-radius: 50%;
             border: 5px solid lightgrey;
             background-image: linear-gradient(to top left, blue, white, );
-            align-self: flex-end;
+            align-self: flexend;
         }
 
         .red-circle {
@@ -83,6 +90,10 @@ export default {
             border-radius: 50%;
             border: 5px solid lightgrey;
             background-image: linear-gradient(to top left, rgb(12, 122, 17), white, );
+        }
+
+        .type-select {
+            justify-self: flex-end;
         }
     }
 
